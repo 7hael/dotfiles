@@ -1,0 +1,12 @@
+#!/bin/sh
+
+WALLS=$HOME/.local/share/backgrounds
+
+CURRENT=`ls $WALLS | shuf -n 1`
+
+while [ true ]; do
+	feh --bg-scale --no-fehbg $WALLS/$CURRENT
+	NEW=`ls $WALLS | grep -v $CURRENT | shuf -n 1`
+	CURRENT=$NEW
+	sleep 600
+done

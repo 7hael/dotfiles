@@ -1,0 +1,7 @@
+#TabsToolbar:not([customizing="true"]) {
+  visibility: collapse !important;
+}
+
+#toolbar-menubar {
+  padding-top: 0px !important;
+}

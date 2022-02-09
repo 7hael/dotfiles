@@ -1,0 +1,13 @@
+# media
+video/*; mpv "%s"
+audio/ogg; mpv --speed=1.33 "%s"
+audio/mpeg; mpv --no-video "%s"
+image/*; nsxiv "%s"
+
+# text
+text/html; nvim "%s"
+text/html; nvim "%s"
+text/plain; nvim "%s"
+
+# fallback to nvim
+text/*; nvim "%s"

@@ -1,0 +1,5 @@
+#!/bin/bash
+
+cupd=$(apt list --upgradable | wc -l) 
+cupd=$(($cupd - 1))
+echo "$cupd updates" | grep

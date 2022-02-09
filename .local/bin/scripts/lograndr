@@ -1,0 +1,12 @@
+#!/bin/sh
+
+HDMI_CHECK="$(xrandr | grep -c "HDMI1 connected")"
+
+if [ $HDMI_CHECK -eq 1 ]
+then
+	xrandr --output eDP1 --off --output HDMI1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output VIRTUAL1 --off
+else
+	#TODO: initialize brightness to different values according to current time
+	xrandr --output eDP1 --brightness .8
+fi
+

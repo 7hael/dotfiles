@@ -1,0 +1,24 @@
+# shell profile
+
+export PATH=$PATH$( find $HOME/.local/bin/ -type d -printf ":%p" )
+export EDITOR="nvim"
+export VISUAL="nvim"
+export BROWSER="firefox"
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_CONFIG_HOME="$HOME/.config"
+export GTK2_RC_FILES="${XDG_CONFIG_HOME:-$HOME/.config}/gtk-2.0/gtkrc-2.0"
+export LESSHISTFILE="-"
+export WGETRC="${XDG_CONFIG_HOME:-$HOME/.config}/wget/wgetrc"
+export WINEPREFIX="${XDG_DATA_HOME:-$HOME/.local/share}/wineprefixes/default"
+export ANDROID_SDK_HOME="${XDG_CONFIG_HOME:-$HOME/.config}/android"
+export CARGO_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/cargo"
+export GOPATH="${XDG_DATA_HOME:-$HOME/.local/share}/go"
+export HISTFILE="${XDG_DATA_HOME:-$HOME/.local/share}/history"
+#export ALSA_CONFIG_PATH="$XDG_CONFIG_HOME/alsa/asoundrc"
+export _JAVA_AWT_WM_NONREPARENTING=1
+export ZSH_THEME_GIT_PROMPT_CACHE="$HOME/.cache/zsh/git-prompt"
+export GNUPGHOME="$HOME/.local/gnupg"
+export PASSWORD_STORE_DIR="$HOME/.local/pass"

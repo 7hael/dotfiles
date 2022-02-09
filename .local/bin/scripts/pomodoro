@@ -1,0 +1,56 @@
+#!/bin/sh
+# License: GNU GPLv3
+
+### OPTIONS AND VARIABLES ###
+
+while getopts ":a:p:c:h" opt; do 
+	case $opt in
+		h) printf "Usage:\n pomodoro [options]...\n -a: activity time in minutes (default 25)\n -p: pause time in minutes (default 5)\n -c: number of pomodoro's cycles\n -h: show this message\n" && exit 1 ;;
+		a) activity=${OPTARG} ;;
+		p) pause=${OPTARG} ;;
+		c) cycles=${OPTARG} ;;
+		*) printf "Invalid option: -%s\ntry 'pomodoro -h' for more informations" "$OPTARG" && exit 1 ;;
+	esac done
+# check if already in background
+[ $(ps -ef | grep -E '\/bin\/sh [/.a-z]+pomodoro' | wc -l) -gt 2 ] && printf "Already Running!\n" && exit 1
+
+# check arguments validity
+[ -n "$(echo $pause | grep -E '[^0-9]+')" ] && printf "Invalid pause argument, must be an integer\n" && exit 1
+[ -n "$(echo $activity | grep -E '[^0-9]+')" ] && printf "Invalid activity argument, must be an integer\n" && exit 1
+[ -n "$(echo $cycles | grep -E '[^0-9]+')" ] && printf "Invalid cycles argument, must be an integer\n" && exit 1
+
+
+# set defaults
+[ -z "$activity" ] && activity=25
+[ -z "$pause" ] && pause=5
+[ -z "$cycles" ] && cycles=3
+
+asecs=$((activity * 60))
+psecs=$((pause * 60))
+pomodoros=0
+
+notifysound="mpv $HOME/.local/share/sounds/pomodoro.mp3"
+# cycles 
+while true
+do
+	i=0
+	while [ "$i" -le "$cycles" ]
+	do
+		cnum=$((i+1))
+		sleep $asecs
+		notify-send "Pomodoro $cnum" "Take a break!"
+		$notifysound
+		sleep $psecs
+		notify-send "Pomodoro $cnum" "Back to work!"
+		$notifysound
+		i=$((i+1))
+	done
+
+	sleep $asecs
+	pomodoros=$(( pomodoros +1 ))
+	notify-send "Pomodoro cycle $(( pomodoros )) ended!" "Take a long break!"
+	$notifysound
+	sleep $(( psecs * 2 ))
+	notify-send "Pomodoro" "Back to work"
+	$notifysound
+done

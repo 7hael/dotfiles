@@ -1,0 +1,6 @@
+#!/bin/sh
+
+WALLS=$HOME/.local/share/backgrounds
+
+CURRENT=`ls $WALLS | shuf -n 1`
+feh --bg-scale --no-fehbg $WALLS/$CURRENT

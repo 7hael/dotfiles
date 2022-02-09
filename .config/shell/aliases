@@ -1,0 +1,165 @@
+# source aliases
+alias src="source .config/shell/aliases"
+
+# list
+alias ls='ls --color=auto'
+alias la='ls -a'
+alias ll='ls -la'
+alias l='ls'
+alias l.="ls -A | egrep '^\.'"
+
+# fix obvious typo's
+alias cd..='cd ..'
+alias gti="git"
+alias udpate='sudo pacman -Syu'
+alias upate='sudo pacman -Syu'
+
+# Colorize the grep command output for ease of use (good for log files)##
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+
+# readable output
+alias df='df -h'
+
+# pacman unlock
+alias pacunlock="sudo rm /var/lib/pacman/db.lck"
+
+# free
+alias free="free -mt"
+
+# continue download
+alias wget="wget -c"
+
+# merge new xresources
+alias xmerge="xrdb -merge ~/.config/x11/xresources"
+
+# Package Manager(s)
+# pacman 
+alias pacman='sudo pacman'
+alias pacdate='sudo pacman -Syyu'
+
+# paru as aur helper - updates everything
+alias yay="paru"
+alias pksyua="paru -Syyu"
+alias pacgrade="sudo pacman -Syyu && paru -Syyu"
+
+# apt
+alias aptdate="sudo apt update"
+alias aptgrade="sudo apt upgrade"
+
+# ps
+alias psa="ps auxf"
+alias psgrep="ps aux | grep -v grep | grep -i -e VSZ -e"
+
+# grub update
+alias update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
+
+# add new fonts
+alias update-fc='sudo fc-cache -fv'
+
+# copy/paste all content of /etc/skel over to home folder - backup of config created - beware
+alias skel='cp -Rf ~/.config ~/.config-backup-$(date +%Y.%m.%d-%H.%M.%S) && cp -rf /etc/skel/* ~'
+#backup contents of /etc/skel to hidden backup folder in home/user
+alias bupskel='cp -Rf /etc/skel ~/.skel-backup-$(date +%Y.%m.%d-%H.%M.%S)'
+
+# copy bashrc-latest over on bashrc - cb= copy bashrc
+# alias cb='sudo cp /etc/skel/.bashrc ~/.bashrc && source ~/.bashrc'
+# copy /etc/skel/.zshrc over on ~/.zshrc - cb= copy zshrc
+alias cz='sudo cp /etc/skel/.zshrc ~/.zshrc && source ~/.zshrc'
+
+#switch between bash and zsh
+alias tobash="sudo chsh $USER -s /bin/bash && echo 'Now log out.'"
+alias tozsh="sudo chsh $USER -s /bin/zsh && echo 'Now log out.'"
+
+#hardware info --short
+alias hw="hwinfo --short"
+
+# check vulnerabilities microcode
+alias microcode='grep . /sys/devices/system/cpu/vulnerabilities/*'
+
+#get fastest mirrors in your neighborhood
+alias mirror="sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist"
+alias mirrord="sudo reflector --latest 50 --number 20 --sort delay --save /etc/pacman.d/mirrorlist"
+alias mirrors="sudo reflector --latest 50 --number 20 --sort score --save /etc/pacman.d/mirrorlist"
+alias mirrora="sudo reflector --latest 50 --number 20 --sort age --save /etc/pacman.d/mirrorlist"
+
+#youtube-dl
+alias yta-aac="youtube-dl --extract-audio --audio-format aac "
+alias yta-best="youtube-dl --extract-audio --audio-format best "
+alias yta-flac="youtube-dl --extract-audio --audio-format flac "
+alias yta-m4a="youtube-dl --extract-audio --audio-format m4a "
+alias yta-mp3="youtube-dl --extract-audio --audio-format mp3 "
+alias yta-opus="youtube-dl --extract-audio --audio-format opus "
+alias yta-vorbis="youtube-dl --extract-audio --audio-format vorbis "
+alias yta-wav="youtube-dl --extract-audio --audio-format wav "
+alias ytv-best="youtube-dl -f bestvideo+bestaudio "
+
+# Cleanup orphaned packages
+alias cleanup='sudo pacman -Rns $(pacman -Qtdq)'
+
+# get the error messages from journalctl
+alias jctl="journalctl -p 3 -xb"
+
+# nvim
+alias n="nvim"
+# edit important configration files
+alias nlightdm="sudo nvim /etc/lightdm/lightdm.conf"
+alias npacman="sudo nvim /etc/pacman.conf"
+alias ngrub="sudo nvim /etc/default/grub"
+alias nmkinitcpio="sudo nvim /etc/mkinitcpio.conf"
+alias nslim="sudo nvim /etc/slim.conf"
+alias noblogout="sudo nvim /etc/oblogout.conf"
+alias nmirrorlist="sudo nvim /etc/pacman.d/mirrorlist"
+alias nconfgrub="sudo nvim /boot/grub/grub.cfg"
+alias nfstab="sudo nvim /etc/fstab"
+alias nconfig="nvim .config/"
+alias nsh="nvim .config/shell"
+
+# gpg
+# verify signature for isos
+alias gpg-check="gpg2 --keyserver-options auto-key-retrieve --verify"
+# receive the key of a developer
+alias gpg-retrieve="gpg2 --keyserver-options auto-key-retrieve --receive-keys"
+
+# shutdown or reboot
+alias ssn="sudo shutdown now"
+alias sr="sudo reboot"
+
+# systeminfo
+alias probe="sudo -E hw-probe -all -upload"
+alias flacfoldertomp3="find . -name \"*.flac\" -exec ffmpeg -i {} -ab 320k -map_metadata 0 -id3v2_version 3 {}.mp3 \;"
+
+# ranger
+alias fm="ranger"
+
+# transmission
+alias torrent-list="transmission-remote -l"
+alias torrent-add="transmission-remote -a"
+alias torrent="transmission-remote -t"
+
+# cmatrix
+alias cmatrix="cmatrix -b -u 9"
+
+# scrot
+alias scrot="scrot -q 100"
+
+# htop
+alias htop="htop -t"
+
+# castero
+alias pods="castero"
+
+# ani-cli
+alias ani-cli="ani-cli -q 720"
+
+# cmus
+alias vmus="alacritty -e vis &;  cmus"
+alias mus="cmus"
+
+# pipewire
+alias carla="pw-jack carla"
+alias qjackctl="pw-jack qjackctl"
+
+# xsnow
+alias xsnow="xsnow -nosanta -notrees"
