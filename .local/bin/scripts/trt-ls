@@ -1,7 +1,0 @@
-#!/bin/sh
-while [ true ];
-do
-	transmission-remote -l
-	sleep 1
-	clear
-done

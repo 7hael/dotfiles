@@ -74,6 +74,7 @@ alias tozsh="sudo chsh $USER -s /bin/zsh && echo 'Now log out.'"
 
 #hardware info --short
 alias hw="hwinfo --short"
+alias gpustat="sudo watch -n 0.5 cat /sys/kernel/debug/dri/0/amdgpu_pm_info"
 
 # check vulnerabilities microcode
 alias microcode='grep . /sys/devices/system/cpu/vulnerabilities/*'
@@ -116,6 +117,9 @@ alias nfstab="sudo nvim /etc/fstab"
 alias nconfig="nvim .config/"
 alias nsh="nvim .config/shell"
 
+# ssh
+alias ssh="TERM=xterm-256color ssh"
+
 # gpg
 # verify signature for isos
 alias gpg-check="gpg2 --keyserver-options auto-key-retrieve --verify"
@@ -134,8 +138,8 @@ alias flacfoldertomp3="find . -name \"*.flac\" -exec ffmpeg -i {} -ab 320k -map_
 alias fm="ranger"
 
 # transmission
-alias torrent-list="transmission-remote -l"
-alias torrent-add="transmission-remote -a"
+alias torrentls="watch -n 0.5 transmission-remote -l"
+alias torrentadd="transmission-remote -a"
 alias torrent="transmission-remote -t"
 
 # cmatrix
