@@ -60,11 +60,13 @@ alias update-fc='sudo fc-cache -fv'
 
 # copy/paste all content of /etc/skel over to home folder - backup of config created - beware
 alias skel='cp -Rf ~/.config ~/.config-backup-$(date +%Y.%m.%d-%H.%M.%S) && cp -rf /etc/skel/* ~'
+#
 #backup contents of /etc/skel to hidden backup folder in home/user
 alias bupskel='cp -Rf /etc/skel ~/.skel-backup-$(date +%Y.%m.%d-%H.%M.%S)'
 
 # copy bashrc-latest over on bashrc - cb= copy bashrc
 # alias cb='sudo cp /etc/skel/.bashrc ~/.bashrc && source ~/.bashrc'
+
 # copy /etc/skel/.zshrc over on ~/.zshrc - cb= copy zshrc
 alias cz='sudo cp /etc/skel/.zshrc ~/.zshrc && source ~/.zshrc'
 
@@ -84,6 +86,9 @@ alias mirror="sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacma
 alias mirrord="sudo reflector --latest 50 --number 20 --sort delay --save /etc/pacman.d/mirrorlist"
 alias mirrors="sudo reflector --latest 50 --number 20 --sort score --save /etc/pacman.d/mirrorlist"
 alias mirrora="sudo reflector --latest 50 --number 20 --sort age --save /etc/pacman.d/mirrorlist"
+
+# mountings
+alias nasmount="gio mount ftp://192.168.1.62"
 
 #youtube-dl
 alias yta-aac="youtube-dl --extract-audio --audio-format aac "
@@ -105,6 +110,9 @@ alias jctl="journalctl -p 3 -xb"
 # nvim
 alias n="nvim"
 # edit important configration files
+alias nconfig="nvim .config/"
+alias nsh="nvim .config/shell"
+alias nranger="nvim .config/ranger"
 alias nlightdm="sudo nvim /etc/lightdm/lightdm.conf"
 alias npacman="sudo nvim /etc/pacman.conf"
 alias ngrub="sudo nvim /etc/default/grub"
@@ -114,8 +122,6 @@ alias noblogout="sudo nvim /etc/oblogout.conf"
 alias nmirrorlist="sudo nvim /etc/pacman.d/mirrorlist"
 alias nconfgrub="sudo nvim /boot/grub/grub.cfg"
 alias nfstab="sudo nvim /etc/fstab"
-alias nconfig="nvim .config/"
-alias nsh="nvim .config/shell"
 
 # ssh
 alias ssh="TERM=xterm-256color ssh"
@@ -135,7 +141,7 @@ alias probe="sudo -E hw-probe -all -upload"
 alias flacfoldertomp3="find . -name \"*.flac\" -exec ffmpeg -i {} -ab 320k -map_metadata 0 -id3v2_version 3 {}.mp3 \;"
 
 # ranger
-alias fm="ranger"
+alias fm=". ranger"
 
 # transmission
 alias torrentls="watch -n 0.5 transmission-remote -l"
@@ -150,6 +156,9 @@ alias scrot="scrot -q 100"
 
 # htop
 alias htop="htop -t"
+
+# tg
+alias tg="tg"
 
 # castero
 alias pods="castero"
