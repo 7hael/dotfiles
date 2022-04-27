@@ -157,8 +157,8 @@ alias scrot="scrot -q 100"
 # htop
 alias htop="htop -t"
 
-# tg
-alias tg="tg"
+# mpv
+alias mpvdl="mpv --ytdl '$(xsel --clipboard)'"
 
 # castero
 alias pods="castero"
