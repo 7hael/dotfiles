@@ -2,5 +2,6 @@
 
 dwmblocks &
 setxkbmap -option caps:swapescape
-thunar --daemon &
+pcmanfm -d &
+transmission-daemon &
 wallset &
