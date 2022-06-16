@@ -19,7 +19,7 @@
 
 !! bright colors
 ! black
-*.color8:  #7c6f64
+*.color8:  #928374
 ! red
 *.color9:  #fb4934
 ! green
@@ -35,13 +35,52 @@
 ! white
 *.color15: #f4f4f4
 
-!! dwm
-*.dwm.normbgcolor:     #0c0c0c
+!! blacks
+!bg0_hard
+*.color234: #1d2021
+!bg0
+*color235:  #282828
+!bg1
+*color239:  #3c3836
+
+!! orange
+*color166: #d65d0e
+
+!!! dwm
+*.dwm.normfgcolor:     #928374
+*.dwm.normbgcolor:     #1d2021
 *.dwm.normbordercolor: #0c0c0c
-*.dwm.normfgcolor:     #a89984
-*.dwm.selbgcolor:      #a89984
-*.dwm.selbordercolor:  #a89984
-*.dwm.selfgcolor:      #0c0c0c
+*.dwm.selfgcolor:      #ebdbb2
+*.dwm.selbgcolor:      #3c3836
+*.dwm.selbordercolor:  #d79921
+!! SchemeTab
+*.dwm.normtabfg	:      #928374
+*.dwm.normtabbg	:      #1d2021
+*.dwm.normtabborder:   #928374
+*.dwm.seltabfg:        #928374
+*.dwm.seltabbg:        #1d2021
+*.dwm.seltabborder:    #928374
+!! SchemeTags
+*.dwm.normtagfg:       #d65d0e
+*.dwm.normtagbg:       #1d2021
+*.dwm.seltagfg:        #1d2021
+*.dwm.seltagbg:        #b8bb26
+!! SchemeInfo
+! *.dwm.norminfofg:      #
+! *.dwm.norminfobg:      #
+! *.dwm.selinfobg:       #
+! *.dwm.selinfobg:       #
+!! SchemeStatus
+! *.dwm.normstatfg:      #
+! *.dwm.normstatbg:      #
+! SchemeWarn & Error
+! *.dwm.warnstatfg:      #
+! *.dwm.warnstatbg:      #
+! *.dwm.warnstatborder:  #
+! *.dwm.errstatfg:       #
+! *.dwm.errstatbg:       #
+! *.dwm.errstatborder:   #
+!! OTHER CONFIGS
 ! dwm.showbar:         1
 ! dwm.topbar:          1
 ! dwm.nmaster:         1
@@ -61,3 +100,33 @@
 *.Nsxiv.window.background: #0c0c0c
 *.Nsxiv.bar.foreground:    #0c0c0c
 *.Nsxiv.bar.background:    #a89984
+
+!! xterm
+*.xterm*termName: xterm-256color
+*.xterm*locale: true
+*.xterm*highlightSelection: true
+*.xterm*trimSelection: true
+*.xterm*saveLinew: 4096
+*.xterm*faceName: Fira Code
+*.xterm*renderFont: true
+*.xterm*faceSize: 11
+*.xterm*vt100.selectToClipboard: true
+*.xterm*vt100.translations: #override \ Shift Ctrl C: copy-selection(CLIPBOARD) \n\ Shift Ctrl V: insert-selection(CLIPBOARD)
+*.xterm*background: #262626
+*.xterm*foreground: #ebdbb2
+*.xterm*color0: #262628
+*.xterm*color8: #928374
+*.xterm*color1: #CC241D
+*.xterm*color9: #fb4934
+*.xterm*color2: #98971a
+*.xterm*color10: #b8bb26
+*.xterm*color3: #FF8F15
+*.xterm*color11: #FFAF00
+*.xterm*color4: #458588
+*.xterm*color12: #83a598
+*.xterm*color5: #b16286
+*.xterm*color13: #d3869b
+*.xterm*color6: #689d6a
+*.xterm*color14: #8ec07c
+*.xterm*color7: #a89984
+*.xterm*color15: #ebdbb2
