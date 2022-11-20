@@ -1,0 +1,1 @@
+return { path = "/home/ae/documents/repos", documents = {["type"]="leaf",["views"]={[1]={["active"]=true,["type"]="view",["scroll"]={["y"]=0,["x"]=0,["to"]={["y"]=0,["x"]=0}},["module"]="core.emptyview"}},["active_view"]=1}, directories = {} }

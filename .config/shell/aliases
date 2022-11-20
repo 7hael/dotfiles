@@ -150,6 +150,7 @@ alias torrent="transmission-remote -t"
 
 # cmatrix
 alias cmatrix="cmatrix -b -u 9"
+alias unimatrix="unimatrix -s 95 -a"
 
 # scrot
 alias scrot="scrot -q 100"
@@ -176,3 +177,6 @@ alias qjackctl="pw-jack qjackctl"
 
 # xsnow
 alias xsnow="xsnow -nosanta -notrees"
+
+# nvm
+alias nvm-load="source /usr/share/nvm/init-nvm.sh"
