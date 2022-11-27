@@ -15,6 +15,7 @@ LOG_PATH = os.path.expanduser("~/.local/share/tg/")
 
 # If you have problems with tdlib shipped with the client, you can install and
 # use your own, for example:
+TDLIB_PATH = "/usr/lib/libtdjson.so"
 
 # you can use any other notification cmd, it is simple python string which
 # can format title, msg, subtitle and icon_path paramters
