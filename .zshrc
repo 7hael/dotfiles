@@ -98,3 +98,18 @@ ex ()
     echo "'$1' is not a valid file"
   fi
 }
+
+case "$TERM" in (alacritty|rxvt|rxvt-*|st|st-*|*xterm*|(dt|k|E)term)
+    local term_title () { print -n "\e]0;${(j: :q)@}\a" }
+    precmd () {
+      local DIR="$(print -P '%c')"
+      term_title "alacritty"
+    }
+    preexec () {
+      local DIR="$(print -P '%c')"
+      local CMD="${(j:\n:)${(f)1}}"
+      term_title "$DIR" "$CMD"
+      term_title "$CMD"
+    }
+  ;;
+esac
