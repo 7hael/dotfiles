@@ -1,15 +1,16 @@
 * {
-    /* `otf-font-awesome` is required to be installed for icons */
-    font-family: IBM Plex, Roboto, Helvetica, Arial, sans-serif;
-    font-size: 14px;
+    font-family: Fira Code, IBM Plex, Roboto, Helvetica, Arial, sans-serif;
+    font-size: 12px;
+	padding: 0;
+	min-height: 0; 
 }
 
 window#waybar {
-    background-color: #121212;
-    border-bottom: 3px solid rgba(100, 114, 125, 0.5);
     color: #f9f5d7;
-    transition-property: background-color;
-    transition-duration: .5s;
+    background-color: #121212;
+	border-bottom: 1px solid #a89984;
+	transition-property: background-color;
+	transition-duration: .5s;
 }
 
 window#waybar.hidden {
@@ -21,9 +22,10 @@ window#waybar.termite {
 }
 
 window#waybar.chromium {
-    background-color: #000000;
     border: none;
+    background-color: #000000;
 }
+
 
 button {
     /* Use box-shadow instead of border so the text isn't offset */
@@ -31,37 +33,32 @@ button {
     /* Avoid rounded borders under each button name */
     border: none;
     border-radius: 0;
-}
-
-/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
-button:hover {
-    background: inherit;
-    box-shadow: inset 0 -3px #f9f5d7;
+	padding: 2px;
 }
 
 #workspaces button {
-    padding: 0 5px;
-    background-color: transparent;
-    color: #f9f5d7;
+    color: #d65d0e;
+	border-bottom: 1px solid #a89984;
 }
 
 #workspaces button:hover {
-    background: rgba(0, 0, 0, 0.2);
+    background-color: #b8bb26;
+	opacity: .75;
 }
 
 #workspaces button.active {
-    background-color: #928374;
-    box-shadow: inset 0 -3px #f9f5d7;
-	color: #121212
+	color: #121212;
+    background-color: #b8bb26;
+	opacity: 1;
 }
 
 #workspaces button.urgent {
+	color: #121212;
     background-color: #eb4d4b;
 }
 
 #mode {
     background-color: #64727D;
-    border-bottom: 3px solid #a89984;
 }
 
 #clock,
@@ -84,6 +81,7 @@ button:hover {
     color: #a89984;
     padding: 0 8px;
 	border-left: 1px solid #a89984;
+	border-bottom: 1px solid #a89984;
 }
 
 #window,

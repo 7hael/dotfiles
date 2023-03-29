@@ -1,7 +1,7 @@
 {
     "layer": "top", // Waybar at top layer
     "position": "top", // Waybar position (top|bottom|left|right)
-    "height": 24, // Waybar height (to be removed for auto height)
+    "height": 22, // Waybar height (to be removed for auto height)
     "spacing": 0, // Gaps between modules (4px)
 
     // Choose the order of the modules
@@ -93,10 +93,16 @@
     },
 
     "clock": {
-        // "timezone": "Europe/Rome",
+        "timezone": "Europe/Rome",
+		"locale": "it_IT.UTF-8",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%Y-%m-%d}"
-    },
+        "format-alt": "{:%Y-%m-%d}",
+        "calendar": {
+        	"format": {
+            	"today":      "<span color='#d65d0e'><b><u>{}</u></b></span>"
+            }
+        },
+	},
 
     "cpu": {
         "format": " {usage}%",
@@ -155,7 +161,7 @@
         "format": "{icon} {volume}%",
         "format-bluetooth": "{volume}% {icon} {format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": " {format_source}",
+        "format-muted": "󰖁",
         "format-source": "",
         "format-source-muted": "",
         "format-icons": {
