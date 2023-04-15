@@ -1,7 +1,7 @@
 # color page to fit dark theme
 set recolor-darkcolor "#C4C4C4"
 set recolor-lightcolor "#1A1A1A"
-set recolor true
+set recolor false
 
 # Status bar and document
 set statusbar-bg "#272727"
