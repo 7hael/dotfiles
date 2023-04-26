@@ -17,15 +17,6 @@ window#waybar.hidden {
     opacity: 0.2;
 }
 
-window#waybar.termite {
-    background-color: #3F3F3F;
-}
-
-window#waybar.chromium {
-    border: none;
-    background-color: #000000;
-}
-
 
 button {
     /* Use box-shadow instead of border so the text isn't offset */
@@ -78,15 +69,26 @@ button {
 #scratchpad,
 #mpd {
     background-color: #121212;
-    color: #a89984;
+    color: #b8bb26;
     padding: 0 8px;
-	border-left: 1px solid #a89984;
+	border-left: 1px solid #b8bb26;
 	border-bottom: 1px solid #a89984;
 }
 
 #window,
 #workspaces {
     margin: 0 4px;
+}
+
+#taskbar button:hover {
+    background: #a89984;
+	color: #121212;
+}
+
+#taskbar button.active {
+    background-color: #d65d0e;
+	color: #f9f5d7;
+	border-top: 1px solid #a89984;
 }
 
 /* If workspaces is the leftmost module, omit left margin */

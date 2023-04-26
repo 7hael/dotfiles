@@ -6,12 +6,11 @@
 
     // Choose the order of the modules
     "modules-left": ["wlr/workspaces"],
-    "modules-center": ["hyprland/window"],
+    "modules-center": ["wlr/taskbar"],
     "modules-right": ["network", "temperature", "cpu", "memory", "pulseaudio", "battery", "clock", "tray"],
 
     // Modules configuration
     "wlr/workspaces": {
-        "all-outputs": true,
   		"on-click": "activate",
         "format": "{name}",
         "format-icons": {
@@ -26,8 +25,14 @@
         }
     },
 
+	"wlr/taskbar": {
+	    "format": "{icon} {name}",
+	    "on-click": "activate",
+	},
+
 	"hyprland/window": {
-		"format": "{}"
+		"format": "{}",
+		"separate-outputs": true
 	},
 
     "keyboard-state": {
