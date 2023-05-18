@@ -2,13 +2,12 @@
     font-family: Fira Code, IBM Plex, Roboto, Helvetica, Arial, sans-serif;
     font-size: 12px;
 	padding: 0;
-	min-height: 0; 
+	min-height: 22px; 
 }
 
 window#waybar {
     color: #f9f5d7;
     background-color: #121212;
-	border-bottom: 1px solid #a89984;
 	transition-property: background-color;
 	transition-duration: .5s;
 }
@@ -29,7 +28,6 @@ button {
 
 #workspaces button {
     color: #d65d0e;
-	border-bottom: 1px solid #a89984;
 }
 
 #workspaces button:hover {
@@ -69,10 +67,9 @@ button {
 #scratchpad,
 #mpd {
     background-color: #121212;
-    color: #b8bb26;
+	color: #f9f5d7;
     padding: 0 8px;
 	border-left: 1px solid #b8bb26;
-	border-bottom: 1px solid #a89984;
 }
 
 #window,

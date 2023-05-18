@@ -124,7 +124,7 @@
         "critical-threshold": 80,
         // "format-critical": "{temperatureC}°C {icon}",
         "format": "{icon} {temperatureC}°C",
-        "format-icons": ["", "", ""]
+        "format-icons": ["❄", "", "󰈸"]
     },
 
     "backlight": {
@@ -154,9 +154,9 @@
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
         "format-wifi": " {signalStrength}%",
-        "format-ethernet": "{ipaddr}/{cidr} ",
-        "tooltip-format": "{essid} ",
-        "format-linked": "{ifname} (No IP) ",
+        "format-ethernet": "{ipaddr}/{cidr} 󰈀",
+        "tooltip-format": "{essid} 󰌘",
+        "format-linked": "{ifname} (No IP) 󰪎",
         "format-disconnected": "Disconnected ⚠",
         "format-alt": "{ifname}: {ipaddr}"
     },
@@ -165,14 +165,14 @@
         // "scroll-step": 1, // %, can be a float
         "format": "{icon} {volume}%",
         "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-bluetooth-muted": "󰖁 {icon} {format_source}",
         "format-muted": "󰖁",
         "format-source": "",
         "format-source-muted": "",
         "format-icons": {
             "headphone": "",
-            "hands-free": "",
-            "headset": "",
+            "hands-free": "󱡏",
+            "headset": "󰋎",
             "phone": "",
             "portable": "",
             "car": "",
