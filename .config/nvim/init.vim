@@ -1,5 +1,6 @@
 " Plugins
 call plug#begin()
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'ellisonleao/gruvbox.nvim'
 Plug 'nvim-tree/nvim-web-devicons'
 Plug 'nvim-tree/nvim-tree.lua'
@@ -8,6 +9,13 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.1' }
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
 Plug 'neovim/nvim-lspconfig'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-cmdline'
+Plug 'hrsh7th/nvim-cmp'
+
+Plug 'simrat39/rust-tools.nvim'
 call plug#end()
 
 " Jump to the last position when reopening a file
@@ -47,6 +55,7 @@ inoremap []     []
 
 " nvim-tree
 :lua require('plugins/tree')
+:lua require('plugins/tree-autoclose')
 map <C-t> :NvimTreeToggle <CR>
 
 " nvim-gruvbox
@@ -58,6 +67,11 @@ colorscheme gruvbox
 " nvim-treesitter
 :lua require('plugins/treesitter')
 
-" nvim-treesitter
+" nvim-telescope
 :lua require('plugins/telescope')
 
+" nvim-cmp
+:lua require('plugins/cmp')
+
+" rust-tools 
+:lua require('plugins/rust-tools')
