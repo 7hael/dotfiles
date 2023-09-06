@@ -5,24 +5,13 @@
     "spacing": 0, // Gaps between modules (4px)
 
     // Choose the order of the modules
-    "modules-left": ["wlr/workspaces"],
+    "modules-left": ["hyprland/workspaces"],
     "modules-center": ["wlr/taskbar"],
     "modules-right": ["network", "temperature", "cpu", "memory", "pulseaudio", "battery", "clock", "tray"],
 
     // Modules configuration
-    "wlr/workspaces": {
-  		"on-click": "activate",
+    "hyprland/workspaces": {
         "format": "{name}",
-        "format-icons": {
-            "1": " ",
-            "2": " ",
-            "3": " ",
-            "4": " ",
-            "5": " ",
-            "urgent": "",
-            "focused": "",
-            "default": ""
-        }
     },
 
 	"wlr/taskbar": {
@@ -120,7 +109,7 @@
 
     "temperature": {
         // "thermal-zone": 2,
-        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+        "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
         "critical-threshold": 80,
         // "format-critical": "{temperatureC}°C {icon}",
         "format": "{icon} {temperatureC}°C",
@@ -178,7 +167,7 @@
             "car": "",
             "default": ["", "", ""]
         },
-        "on-click": "pavucontrol"
+        "on-click": "alacritty -e pulsemixer"
     },
 
     "custom/media": {
