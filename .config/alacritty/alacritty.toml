@@ -1,0 +1,40 @@
+[colors]
+draw_bold_text_with_bright_colors = true
+
+[colors.bright]
+black = "#928374"
+blue = "#83a598"
+cyan = "#8ec07c"
+green = "#b8bb26"
+magenta = "#8787AF"
+red = "#fb4934"
+white = "#f9f5d7"
+yellow = "#fabd2f"
+
+[colors.cursor]
+cursor = "#f9f5d7"
+text = "#121212"
+
+[colors.normal]
+black = "#121212"
+blue = "#458588"
+cyan = "#689d6a"
+green = "#98971a"
+magenta = "#5F5F87"
+red = "#cc241d"
+white = "#a89984"
+yellow = "#d79921"
+
+[colors.primary]
+background = "#121212"
+foreground = "#f9f5d7"
+
+[font]
+size = 10
+
+[font.normal]
+family = "Fira Code"
+style = "Regular"
+
+[window]
+dynamic_title = true
