@@ -180,3 +180,15 @@ alias xsnow="xsnow -nosanta -notrees"
 
 # nvm
 alias nvm-load="source /usr/share/nvm/init-nvm.sh"
+
+# vscodium
+alias codio="codium"
+alias codioo="codium ."
+
+# docker
+alias dcu="docker compose up -d"
+alias dcd="docker compose down"
+alias dim="docker images"
+alias dps="docker ps --format 'table {{.Names}}\t{{.Status}}\t{{.ID}}\t{{.Image}}'"
+alias dpsa="docker ps -a"
+alias dsp="docker system prune --all"
