@@ -1,5 +1,6 @@
 " Plugins
 call plug#begin()
+Plug 'christoomey/vim-tmux-navigator', { 'lazy': 'false' }
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'ellisonleao/gruvbox.nvim'
 Plug 'nvim-tree/nvim-web-devicons'
