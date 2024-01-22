@@ -1,8 +1,11 @@
 require'gruvbox'.setup({
   undercurl = true,
   underline = true,
+  italic = {
+    strings = true,
+    comments = true,
+  },
   bold = true,
-  italic = true,
   strikethrough = true,
   invert_selection = false,
   invert_signs = false,
