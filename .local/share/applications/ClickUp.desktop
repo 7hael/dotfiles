@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=ClickUp
+Exec=/usr/bin/clickup --enable-features=UseOzonePlatform --ozone-platform=wayland %U
+Terminal=false
+Type=Application
+Icon=desktop
+StartupWMClass=ClickUp
+X-AppImage-Version=240105hz1mbg8s0
+Comment=ClickUp Desktop
+MimeType=x-scheme-handler/clickup;
+Categories=Utility;
