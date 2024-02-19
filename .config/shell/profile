@@ -1,6 +1,7 @@
 # shell profile
 
 export PATH=$PATH$( find $HOME/.local/bin/ -type d -printf ":%p" )
+export TERMINAL=alacritty
 export EDITOR="nvim"
 export VISUAL="nvim"
 export BROWSER="firefox"
@@ -25,3 +26,9 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 export ZSH_THEME_GIT_PROMPT_CACHE="$HOME/.cache/zsh/git-prompt"
 export GNUPGHOME="$HOME/.local/gnupg"
 export PASSWORD_STORE_DIR="$HOME/.local/pass"
+
+export NPM_PACKAGES="$HOME/.local/lib/node_modules"
+
+export _JAVA_AWT_WM_NONREPARENTING=1
+export HYPRLAND_HEADERS="$HOME/documents/repos/cpp/Hyprland"
+export PATH="$NPM_PACKAGES/bin:$PATH"

@@ -1,6 +1,6 @@
 #! /bin/sh
 
-bat=$(upower -i /org/freedesktop/UPower/devices/battery_BAT1 | awk '{ if($1 == "percentage:") print $2}')
+bat=$(upower -i /org/freedesktop/UPower/devices/battery_BAT0 | awk '{ if($1 == "percentage:") print $2}')
 
 if [ ! -z "$bat" -a "$bat" != "" ]
 then 

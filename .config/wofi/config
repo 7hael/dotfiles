@@ -4,6 +4,7 @@ prompt=
 width=500
 height=250
 term=alacritty
+terminal=alacritty
 hide_scroll=true
 location=2
 yoffset=250

@@ -3,5 +3,5 @@
 ytdl_path="yt-dlp"
 
 external_menu () {
-    dmenu -l 30 -p "$1"
+    bemenu -l 30 -H 26 -p "$1"
 }

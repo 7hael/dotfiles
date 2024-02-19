@@ -1,5 +1,5 @@
 window {
-   background-image: url("/usr/local/share/backgrounds/samori-1.jpg");
+   background-image: url("~/.local/share/backgrounds/samori-1.jpg");
    background-size: cover;
    background-repeat: no-repeat;
    background-position: center;

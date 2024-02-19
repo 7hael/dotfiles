@@ -3,7 +3,8 @@
 dwmblocks &
 setxkbmap -option caps:swapescape
 lxsession &
-pcmanfm -d &
+# systemctl start touchegg.service &
+# touchegg &
 thunar --daemon &
 transmission-daemon &
 dunst &
