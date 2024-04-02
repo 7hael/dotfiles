@@ -29,9 +29,6 @@ user_pref("browser.toolbars.bookmarks.visibility", "never");
 user_pref("browser.safebrowsing.downloads.remote.enabled", false);
 user_pref("browser.safebrowsing.downloads.remote.url", "");
 
-// disable coloring of visited links
-user_pref("layout.css.visited_links_enabled", false);
-
 //set download folder
 user_pref("browser.download.dir", "~/downloads");
 
@@ -43,5 +40,3 @@ user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
 
 // enable GPU rendering
 user_pref("media.ffmpeg.vaapi.enabled", true);
-user_pref("layers.acceleration.force-enabled", true);
-user_pref("gfx.webrender.all", true);

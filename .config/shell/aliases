@@ -26,7 +26,7 @@ alias vis='vim "+set si"'
 alias free="free -mt"
 alias wget="wget -c"
 alias df='df -h'
-
+alias cat='bat --paging=never'
 # aliases for multiple directory listing commands
 alias la='ls -Alh' # show hidden files
 alias ls='ls -aFh --color=always' # add colors and file type extensions
@@ -123,7 +123,6 @@ alias xmerge="xrdb -merge ~/.config/x11/xresources"
 alias pacman='sudo pacman'
 alias pacdate='sudo pacman -Syyu'
 # paru as aur helper - updates everything
-alias yay="paru"
 alias pksyua="paru -Syyu"
 alias pacgrade="sudo pacman -Syyu && paru -Syyu"
 # apt
