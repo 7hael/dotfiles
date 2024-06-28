@@ -2,6 +2,10 @@
 call plug#begin()
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 
+if exists('g:vscode')
+	Plug 'vscode-neovim/vscode-multi-cursor.nvim',
+end
+
 Plug 'ellisonleao/gruvbox.nvim'
 
 Plug 'nvim-tree/nvim-web-devicons'
@@ -13,6 +17,8 @@ Plug 'nvim-lua/plenary.nvim'
 
 Plug 'nvim-telescope/telescope.nvim' 
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
+
+Plug 'aserowy/tmux.nvim'
 
 Plug 'neovim/nvim-lspconfig'
 
@@ -48,7 +54,7 @@ set tabstop=4       " Makes tabs appear 4 spaces wide
 set shiftwidth=4	" Makes indents appear 4 spaces wide
 
 " Use system clipboard
-set clipboard=unnamedplus
+set clipboard+=unnamedplus
 
 let mapleader = " "
 " Pair completion
@@ -84,3 +90,5 @@ colorscheme gruvbox
 
 " rust-tools 
 :lua require('plugins/rust-tools')
+
+:lua require('tmux').setup()
