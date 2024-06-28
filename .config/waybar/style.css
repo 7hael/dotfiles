@@ -1,209 +1,195 @@
+/* // Dark Background */
+/* $gb-dm-bg0: #282828; */
+/* $gb-dm-bg0-hard: #1d2021; */
+/* $gb-dm-bg0-soft: #32302f; */
+/* $gb-dm-bg1: #3c3836; */
+/* $gb-dm-bg2: #504945; */
+/* $gb-dm-bg3: #665c54; */
+/* $gb-dm-bg4: #7c6f64; */
+
+/* // Dark Foreground */
+/* $gb-dm-fg0: #fbf1c7; */
+/* $gb-dm-fg1: #ebdbb2; */
+/* $gb-dm-fg2: #d5c4a1; */
+/* $gb-dm-fg3: #bdae93; */
+/* $gb-dm-fg4: #a89984; */
+
+/* // Dark Colors */
+/* $gb-dm-dark-red: #cc241d; */
+/* $gb-dm-dark-green: #98971a; */
+/* $gb-dm-dark-yellow: #d79921; */
+/* $gb-dm-dark-blue: #458588; */
+/* $gb-dm-dark-purple: #b16286; */
+/* $gb-dm-dark-aqua: #689d6a; */
+/* $gb-dm-dark-orange: #d65d0e; */
+/* $gb-dm-dark-gray: #928374; */
+
+/* $gb-dm-light-red: #fb4934; */
+/* $gb-dm-light-green: #b8bb26; */
+/* $gb-dm-light-yellow: #fabd2f; */
+/* $gb-dm-light-blue: #83a598; */
+/* $gb-dm-light-purple: #d3869b; */
+/* $gb-dm-light-aqua: #8ec07c; */
+/* $gb-dm-light-orange: #f38019; */
+/* $gb-dm-light-gray: #a89984; */
+
 * {
-	font-family: Fira Code, IBM Plex, Roboto, Helvetica, Arial, sans-serif;
-	font-size: 12px;
-	padding: 0;
-	min-height: 22px; 
+  border: none;
+  border-radius: 0;
+  font-family: "SF Mono", "Material Icons", monospace;
+  font-size: 12px;
+  min-height: 0;
 }
 
 window#waybar {
-	color: #f9f5d7;
-	background-color: #121212;
-	transition-property: background-color;
-	transition-duration: .5s;
-}
-
-window#waybar.hidden {
-	opacity: 0.2;
-}
-
-
-button {
-	/* Use box-shadow instead of border so the text isn't offset */
-	box-shadow: inset 0 -3px transparent;
-	/* Avoid rounded borders under each button name */
-	border: none;
-	border-radius: 0;
-	padding: 2px;
+  background: #1d2021;
+  color: #fbf1c7;
 }
 
 #workspaces button {
-	color: #d65d0e;
-}
-
-#workspaces button:hover {
-	background-color: #b8bb26;
-	opacity: .75;
+  padding: 0 4px;
+  background: transparent;
+  color: #fbf1c7;
+  border-bottom: 2px solid transparent;
 }
 
 #workspaces button.active {
-	color: #121212;
-	background-color: #b8bb26;
-	opacity: 1;
+  background: #181818;
+  border-bottom: 2px solid #d3869b;
 }
 
-#workspaces button.urgent {
-	color: #121212;
-	background-color: #eb4d4b;
-}
-
-#mode {
-	background-color: #64727D;
-}
-
+#window,
 #clock,
 #battery,
 #cpu,
 #memory,
-#disk,
 #temperature,
 #backlight,
 #network,
 #pulseaudio,
 #wireplumber,
-#custom-media,
 #tray,
 #mode,
 #idle_inhibitor,
-#scratchpad,
+#language,
+#custom-arch,
+#custom-disturb_on,
+#custom-disturb_off,
+#custom-mic,
+#custom-dismiss-notifications,
+#custom-dnd,
+#custom-wf-recorder,
 #mpd {
-	background-color: #121212;
-	color: #f9f5d7;
-	padding: 0 8px;
-	border-left: 1px solid #b8bb26;
+  padding: 0 8px;
+  margin: 0;
 }
 
-#window,
-#workspaces {
-	margin: 0 4px;
-}
-
-#taskbar button:hover {
-	background: #a89984;
-	color: #121212;
-}
-
-#taskbar button.active {
-	background-color: #d65d0e;
-	color: #f9f5d7;
-}
-
-/* If workspaces is the leftmost module, omit left margin */
-.modules-left > widget:first-child > #workspaces {
-	margin-left: 0;
-}
-
-/* If workspaces is the rightmost module, omit right margin */
-.modules-right > widget:last-child > #workspaces {
-	margin-right: 0;
+#window {
+  border-left: 2px solid #b16286;
 }
 
 #clock {
-}
-
-#battery {
-}
-
-#battery.charging, #battery.plugged {
-	background-color: #98971a;
-	color: #121212;
-}
-
-@keyframes blink {
-	to {
-		background-color: #ffffff;
-		color: #000000;
-	}
-}
-
-#battery.critical:not(.charging) {
-	background-color: #d79921;
-	color: #fb4934;
-	animation-name: blink;
-	animation-duration: 0.5s;
-	animation-timing-function: linear;
-	animation-iteration-count: infinite;
-	animation-direction: alternate;
-}
-
-#cpu {
-}
-
-#memory {
-}
-
-#disk {
-}
-
-#backlight {
-	background-color: #689d6a;
+  background-color: #282828;
 }
 
 #network {
+  border-bottom: 2px solid #b16286;
 }
 
-#network.disconnected {
-	background-color: #a89984;
-	color: #121212;
-}
-
-#pulseaudio {
-}
-
-#pulseaudio.muted {
-	background-color: #a89984;
-	color: #121212;
-}
-
+#pulseaudio,
 #wireplumber {
-	background-color: #fff0f5;
-	color: #000000;
+  border-bottom: 2px solid #83a598;
 }
 
-#wireplumber.muted {
-	background-color: #f53c3c;
+#idle_inhibitor {
+  border-bottom: 2px solid #cc241d;
 }
 
-#custom-media {
-	background-color: #66cc99;
-	color: #2a5c45;
-	min-width: 100px;
+#idle_inhibitor.activated {
+  background-color: #fb4934;
+  color: white;
 }
 
-#custom-media.custom-spotify {
-	background-color: #66cc99;
+#language {
+  border-bottom: 2px solid #8ec07c;
 }
 
-#custom-media.custom-vlc {
-	background-color: #ffa000;
+#custom-disturb-on,
+#custom-disturb-off,
+#custom-arch {
+  color: white;
+  background: #e91e63;
 }
 
-#temperature {
+#custom-mic {
+  border-bottom: 2px solid transparent;
 }
 
-#temperature.critical {
-	background-color: #eb4d4b;
+#custom-mic.not-muted {
+  color: #b8bb26;
+  border-bottom-color: #b8bb26;
 }
 
-#tray {
+#custom-mic.muted {
+  /* color: #fb4934; */
+  border-bottom-color: #fb4934;
+  color: #fbf1c7;
+  background-color: #fb4934;
 }
 
-#tray > .passive {
-	-gtk-icon-effect: dim;
+#custom-dnd {
+  border-bottom: 2px solid #d79921;
+  color: #fadb2f;
 }
 
-#tray > .needs-attention {
-	-gtk-icon-effect: highlight;
-	background-color: #8ec07c;
+#custom-dnd.-on {
+  color: #282828;
+  background-color: #fabd2f;
 }
 
-#mpd {
+@keyframes blink {
+  to {
+    background-color: #26a65b;
+    color: #fb4934;
+  }
 }
 
-#mpd.disconnected {
+#battery {
+  background-color: #98971a;
+  color: #1d2021;
 }
 
-#mpd.stopped {
+#battery.full {
+  background-color: transparent;
+  color: #b8bb26;
 }
 
-#mpd.paused {
+#battery.discharging {
+  color: #1d2021;
+  background-color: #d79921;
+}
+
+#battery.charging {
+  background-color: #98971a;
+  color: #1d2021;
+}
+
+#battery.warning:not(.charging) {
+  background: #cc241d;
+  color: #26a65b;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+#custom-dismiss-notifications {
+  border-bottom: 2px solid #cc241d;
+}
+
+#custom-wf-recorder {
+  background-color: #fb4934;
+  color: white;
+  border-bottom: 2px solid #cc241d;
 }
