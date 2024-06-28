@@ -32,5 +32,3 @@ export NPM_PACKAGES="$HOME/.local/lib/node_modules"
 export _JAVA_AWT_WM_NONREPARENTING=1
 export HYPRLAND_HEADERS="$HOME/documents/repos/cpp/Hyprland"
 export PATH="$NPM_PACKAGES/bin:$PATH"
-
-export GDK_DPI_SCALE=0.5
