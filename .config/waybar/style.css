@@ -101,50 +101,8 @@ window#waybar {
   border-bottom: 2px solid #83a598;
 }
 
-#idle_inhibitor {
-  border-bottom: 2px solid #cc241d;
-}
-
-#idle_inhibitor.activated {
-  background-color: #fb4934;
-  color: white;
-}
-
 #language {
   border-bottom: 2px solid #8ec07c;
-}
-
-#custom-disturb-on,
-#custom-disturb-off,
-#custom-arch {
-  color: white;
-  background: #e91e63;
-}
-
-#custom-mic {
-  border-bottom: 2px solid transparent;
-}
-
-#custom-mic.not-muted {
-  color: #b8bb26;
-  border-bottom-color: #b8bb26;
-}
-
-#custom-mic.muted {
-  /* color: #fb4934; */
-  border-bottom-color: #fb4934;
-  color: #fbf1c7;
-  background-color: #fb4934;
-}
-
-#custom-dnd {
-  border-bottom: 2px solid #d79921;
-  color: #fadb2f;
-}
-
-#custom-dnd.-on {
-  color: #282828;
-  background-color: #fabd2f;
 }
 
 @keyframes blink {
@@ -184,12 +142,16 @@ window#waybar {
   animation-direction: alternate;
 }
 
-#custom-dismiss-notifications {
-  border-bottom: 2px solid #cc241d;
-}
-
-#custom-wf-recorder {
-  background-color: #fb4934;
-  color: white;
-  border-bottom: 2px solid #cc241d;
+#temperature.critical {
+  background: #cc241d;
+  color: #26a65b;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
