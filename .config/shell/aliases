@@ -5,6 +5,7 @@ alias src="source .config/shell/aliases"
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 alias c='clear -x'
 alias now='date "+%Y-%m-%d %A %T %Z"'
+alias rndstr="tr -dc A-Za-z0-9 </dev/urandom | head -c $1"
 
 # aliases to modified commands
 alias cp='cp -i'
@@ -283,4 +284,11 @@ alias psp="podman system prune --all"
 # bitwarden
 alias bwae="BITWARDENCLI_APPDATA_DIR=~/.config/bitwarden/ae bw $@"
 alias bwlh="BITWARDENCLI_APPDATA_DIR=~/.config/bitwarden/lh bw $@"
+
+# python
+alias venv-load="source venv/bin/activate"
+alias venv-create="python3 -m venv venv"
+
+# k8s
+alias mk="minikube"
 

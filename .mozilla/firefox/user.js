@@ -38,5 +38,8 @@ user_pref("browser.uiCustomization.state", "{\"placements\":{\"widget-overflow-f
 // enable userChrome.css changes
 user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
 
+// sidebary draggable items in linux
+user_pref("widget.gtk.ignore-bogus-leave-notify", 1)
+
 // enable GPU rendering
 user_pref("media.ffmpeg.vaapi.enabled", true);

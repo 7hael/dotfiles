@@ -1,0 +1,112 @@
+{
+    (
+        modifiers: [
+            Super,
+            Shift,
+        ],
+        key: "d",
+    ): System(Launcher),
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "w",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "Return",
+        description: Some("Terminal"),
+    ): Spawn("alacritty -e tmux"),
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "slash",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "q",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+            Shift,
+        ],
+        key: "t",
+        description: Some("Telegram"),
+    ): Spawn("telegram-desktop"),
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "f",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "d",
+    ): System(AppLibrary),
+    (
+        modifiers: [
+            Super,
+            Shift,
+        ],
+        key: "w",
+    ): System(WorkspaceOverview),
+    (
+        modifiers: [
+            Super,
+        ],
+    ): System(Launcher),
+    (
+        modifiers: [
+            Super,
+            Shift,
+        ],
+        key: "c",
+    ): Close,
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "a",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "b",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+            Shift,
+        ],
+        key: "f",
+    ): System(WebBrowser),
+    (
+        modifiers: [
+            Super,
+            Shift,
+        ],
+        key: "e",
+        description: Some("File Manager"),
+    ): Spawn("thunar"),
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "e",
+    ): System(HomeFolder),
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "t",
+    ): System(Terminal),
+}

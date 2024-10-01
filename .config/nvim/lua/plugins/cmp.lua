@@ -62,7 +62,7 @@ cmp.setup.cmdline(':', {
 -- Set up lspconfig.
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 local lspconfig = require('lspconfig')
-local servers = { 'bashls', 'clangd', 'rust_analyzer', 'pyright', 'tsserver' }
+local servers = { 'bashls', 'clangd', 'rust_analyzer', 'pyright', 'ts_ls' }
 
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
