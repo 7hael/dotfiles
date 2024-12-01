@@ -11,6 +11,8 @@ Plug 'ellisonleao/gruvbox.nvim'
 Plug 'nvim-tree/nvim-web-devicons'
 Plug 'nvim-tree/nvim-tree.lua'
 
+Plug 'williamboman/mason.nvim'
+
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 Plug 'nvim-lua/plenary.nvim'
@@ -21,7 +23,6 @@ Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'cmake -S. -Bbuild -DCM
 Plug 'aserowy/tmux.nvim'
 
 Plug 'neovim/nvim-lspconfig'
-
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
@@ -90,5 +91,8 @@ colorscheme gruvbox
 
 " rust-tools 
 :lua require('plugins/rust-tools')
+
+" mason
+:lua require('mason').setup()
 
 :lua require('tmux').setup()

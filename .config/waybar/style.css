@@ -1,157 +1,158 @@
-/* // Dark Background */
-/* $gb-dm-bg0: #282828; */
-/* $gb-dm-bg0-hard: #1d2021; */
-/* $gb-dm-bg0-soft: #32302f; */
-/* $gb-dm-bg1: #3c3836; */
-/* $gb-dm-bg2: #504945; */
-/* $gb-dm-bg3: #665c54; */
-/* $gb-dm-bg4: #7c6f64; */
-
-/* // Dark Foreground */
-/* $gb-dm-fg0: #fbf1c7; */
-/* $gb-dm-fg1: #ebdbb2; */
-/* $gb-dm-fg2: #d5c4a1; */
-/* $gb-dm-fg3: #bdae93; */
-/* $gb-dm-fg4: #a89984; */
-
-/* // Dark Colors */
-/* $gb-dm-dark-red: #cc241d; */
-/* $gb-dm-dark-green: #98971a; */
-/* $gb-dm-dark-yellow: #d79921; */
-/* $gb-dm-dark-blue: #458588; */
-/* $gb-dm-dark-purple: #b16286; */
-/* $gb-dm-dark-aqua: #689d6a; */
-/* $gb-dm-dark-orange: #d65d0e; */
-/* $gb-dm-dark-gray: #928374; */
-
-/* $gb-dm-light-red: #fb4934; */
-/* $gb-dm-light-green: #b8bb26; */
-/* $gb-dm-light-yellow: #fabd2f; */
-/* $gb-dm-light-blue: #83a598; */
-/* $gb-dm-light-purple: #d3869b; */
-/* $gb-dm-light-aqua: #8ec07c; */
-/* $gb-dm-light-orange: #f38019; */
-/* $gb-dm-light-gray: #a89984; */
-
 * {
-  border: none;
-  border-radius: 0;
-  font-family: "SF Mono", "Material Icons", monospace;
-  font-size: 12px;
-  min-height: 0;
+    font-size: 14px;
+    border-radius: 4px;
 }
 
 window#waybar {
-  background: #1d2021;
-  color: #fbf1c7;
+    /* `otf-font-awesome` is required to be installed for icons */
+    font-family: FontAwesome, monospace;
+    background-color: transparent;
+    border-bottom: 0px;
+    color: #ebdbb2;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+window#waybar.empty #window {
+    background-color: transparent;
+}
+
+.modules-right {
+    margin: 2px 0 0;
+}
+
+.modules-center {
+    margin: 2px 0 0;
+}
+
+.modules-left {
+    margin: 2px 0 0;
+}
+
+button {
+    /* Use box-shadow instead of border so the text isn't offset */
+    /* box-shadow: inset 0 -3px transparent; */
+    border: none;
+}
+
+#workspaces {
+    background-color: #282828;
 }
 
 #workspaces button {
-  padding: 0 4px;
-  background: transparent;
-  color: #fbf1c7;
-  border-bottom: 2px solid transparent;
+    padding: 0 4px;
+    color: #ebdbb2;
+    border-radius: 0;
 }
 
-#workspaces button.active {
-  background: #181818;
-  border-bottom: 2px solid #d3869b;
+#workspaces button:first-child {
+    border-radius: 5px 0 0 5px;
 }
 
+#workspaces button:last-child {
+    border-radius: 0 5px 5px 0;
+}
+
+#workspaces button:hover {
+    color: #d79921;
+}
+
+#workspaces button.visible {
+    color: #d79921;
+}
+
+#workspaces button.urgent {
+    background-color: #b16286;
+}
+
+#idle_inhibitor,
+#cava,
+#memory,
+#cpu,
+#scratchpad,
+#mode,
 #window,
 #clock,
 #battery,
-#cpu,
-#memory,
-#temperature,
 #backlight,
-#network,
-#pulseaudio,
 #wireplumber,
 #tray,
-#mode,
-#idle_inhibitor,
-#language,
-#custom-arch,
-#custom-disturb_on,
-#custom-disturb_off,
-#custom-mic,
-#custom-dismiss-notifications,
-#custom-dnd,
-#custom-wf-recorder,
-#mpd {
-  padding: 0 8px;
-  margin: 0;
+#mpris,
+#taskbar,
+#load {
+    padding: 0 4px; 
+    background-color: #282828;
+    color: #ebdbb2;
 }
 
-#window {
-  border-left: 2px solid #b16286;
+#mode {
+    background-color: #689d6a;
+    color: #282828;
+    /* box-shadow: inset 0 -3px #ffffff; */
 }
 
-#clock {
-  background-color: #282828;
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left>widget:first-child>#workspaces {
+    margin-left: 0;
 }
 
-#network {
-  border-bottom: 2px solid #b16286;
+/* If workspaces is the rightmost module, omit right margin */
+.modules-right>widget:last-child>#workspaces {
+    margin-right: 0;
 }
 
-#pulseaudio,
-#wireplumber {
-  border-bottom: 2px solid #83a598;
-}
-
-#language {
-  border-bottom: 2px solid #8ec07c;
+#battery.charging,
+#battery.plugged {
+    background-color: #98971a;
+    color: #282828;
 }
 
 @keyframes blink {
-  to {
-    background-color: #26a65b;
-    color: #fb4934;
-  }
+    to {
+        background-color: #282828;
+        color: #ebdbb2;
+    }
 }
 
-#battery {
-  background-color: #98971a;
-  color: #1d2021;
+/* Using steps() instead of linear as a timing function to limit cpu usage */
+#battery.critical:not(.charging) {
+    background-color: #cc241d;
+    color: #ebdbb2;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: steps(12);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
 }
 
-#battery.full {
-  background-color: transparent;
-  color: #b8bb26;
+label:focus {
+    background-color: #000000;
 }
 
-#battery.discharging {
-  color: #1d2021;
-  background-color: #d79921;
+#wireplumber.muted {
+    background-color: #458588;
 }
 
-#battery.charging {
-  background-color: #98971a;
-  color: #1d2021;
+#tray>.passive {
+    -gtk-icon-effect: dim;
 }
 
-#battery.warning:not(.charging) {
-  background: #cc241d;
-  color: #26a65b;
-  animation-name: blink;
-  animation-duration: 0.5s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
+#taskbar.empty {
+    background-color: transparent;
 }
 
-#temperature.critical {
-  background: #cc241d;
-  color: #26a65b;
-  animation-name: blink;
-  animation-duration: 0.5s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-  animation-duration: 0.5s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
+#tray>.needs-attention {
+    -gtk-icon-effect: highlight;
+}
+
+#tray menu {
+    font-family: sans-serif;
+}
+
+#scratchpad.empty {
+    background: transparent;
 }

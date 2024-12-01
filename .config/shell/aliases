@@ -292,3 +292,8 @@ alias venv-create="python3 -m venv venv"
 # k8s
 alias mk="minikube"
 
+# openconnect
+alias vpn-brescia='sudo openconnect --protocol=fortinet -C "$(openfortivpn-webview accessoremoto.comune.brescia.it)" accessoremoto.comune.brescia.it'
+
+# mosh
+alias mosh='mosh --no-init'

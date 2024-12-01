@@ -11,7 +11,7 @@ zstyle ':completion::complete:*' gain-privileges 1
 
 # terminal title
 case "$TERM" in (alacritty|rxvt|rxvt-*|st|st-*|*xterm*|(dt|k|E)term)
-    local term_title () { print -n "\e]0;${(j: :q)@}\a" }
+    local term_title () { print -n "\e]0;${(j: :q)@}\a"}
     precmd () {
       local DIR="$(print -P '%d')"
       term_title "$DIR"
@@ -53,6 +53,7 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 # zsh-autosuggestions
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 # zsh-git-prompt
+# [ -s "$HOME/.local/src/zsh-git-prompt" ] && source "$HOME/.local/src/zsh-git-prompt"
 source /usr/lib/zsh-git-prompt/zshrc.sh
 # GIT_PROMPT_EXECUTABLE="haskell" # defauly is python, set to haskell when installing manually
 
@@ -340,6 +341,20 @@ function pgls {
 		unset IFS
 }
 
+########
+# node #
+########
+
+function nvm {
+	[ -s "/usr/share/nvm/init-nvm.sh" ] && source "/usr/share/nvm/init-nvm.sh"
+	nvm "$@"
+}
+
+function pyenvload {
+	export PYENV_ROOT="$HOME/.pyenv"
+	[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+	eval "$(pyenv init -)"
+}
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"

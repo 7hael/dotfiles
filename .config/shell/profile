@@ -1,10 +1,9 @@
 # shell profile
 
-export PATH=$PATH$( find $HOME/.local/bin/ -type d -printf ":%p" )
 export TERMINAL=alacritty
 export EDITOR="nvim"
+export BROWSER="zen-browser"
 export VISUAL="nvim"
-export BROWSER="firefox"
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export MANROFFOPT="-c"
 export PAGER="bat"
@@ -31,5 +30,8 @@ export NPM_PACKAGES="$HOME/.local/lib/node_modules"
 
 export _JAVA_AWT_WM_NONREPARENTING=1
 export HYPRLAND_HEADERS="$HOME/documents/repos/cpp/Hyprland"
-export PATH="$NPM_PACKAGES/bin:$GOPATH:/bin:$PATH"
-export VAGRANT_DEFAULT_PROVIDER=libvirt
+export PATH=$PATH$( find $HOME/.local/bin/ -type d -printf ":%p" )
+export PATH="$NPM_PACKAGES/bin:$GOPATH/bin:$PATH"
+
+# Vagrant
+export VAGRANT_DISABLE_STRICT_DEPENDENCY_ENFORCEMENT=1
