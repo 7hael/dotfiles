@@ -1,2 +1,2 @@
 #!/bin/sh
-stow --verbose --adopt --target="$HOME" .
+stow --verbose --adopt --override --target="$HOME" .
